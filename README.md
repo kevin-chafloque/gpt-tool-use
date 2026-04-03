@@ -15,16 +15,23 @@ The tradeoff is speed. Browser automation is slower than a direct API call — C
 ## Setup
 
 ```bash
+pip install git+https://github.com/kevin-chafloque/gpt-tool-use.git
+playwright install chromium
+```
+
+Or clone and install locally:
+
+```bash
 git clone https://github.com/kevin-chafloque/gpt-tool-use.git
 cd gpt-tool-use
-pip install -r requirements.txt
+pip install .
 playwright install chromium
 ```
 
 Run once to log into ChatGPT (opens a browser window):
 
 ```bash
-python mcp_server.py
+python -c "from mcp_server import *"
 ```
 
 Then add to your Claude Code MCP config (`~/.claude/settings.json`):
@@ -33,8 +40,8 @@ Then add to your Claude Code MCP config (`~/.claude/settings.json`):
 {
   "mcpServers": {
     "gpt-search": {
-      "command": "python",
-      "args": ["/absolute/path/to/gpt-tool-use/mcp_server.py"]
+      "command": "gpt-search",
+      "args": []
     }
   }
 }

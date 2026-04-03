@@ -24,5 +24,8 @@ async def gpt_search(query: str) -> str:
     finally:
         await bot.close()
 
-if __name__ == "__main__":
+def main():
     mcp.run(transport="stdio")
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,3 @@
+browser
+gpt_search
+mcp_server
